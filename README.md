@@ -4,9 +4,6 @@ More implementation records-->https://hackmd.io/@popo8712/HkAb6q5eJx
 
 
 
-
-# DCT-Based Image Compression on Raspberry Pi
-
 ## Overview
 This project implements a Discrete Cosine Transform (DCT)-based image compression algorithm using the C programming language on an ARM Cortex-A platform (Raspberry Pi 3 Model B). The code includes DCT computation, quantization, and PSNR calculation.
 
