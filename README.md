@@ -12,21 +12,3 @@ This project implements a Discrete Cosine Transform (DCT)-based image compressio
 5. `uart_communication.c` - UART simulation for data transfer.
 6. `test_data_generator.py` - Generates test data.
 7. `README.md` - Project documentation.
-
-## How to Run
-1. Compile the program:
-   ```
-   gcc dct_image_compression.c -o dct_image_compression -lm
-   ```
-2. Execute:
-   ```
-   ./dct_image_compression
-   ```
-3. Use Python to generate test data:
-   ```
-   python3 test_data_generator.py
-   ```
-
-## Requirements
-- GCC
-- Python 3.x
