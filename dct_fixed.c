@@ -2,6 +2,9 @@
 #include <string.h>
 #include <math.h>
 
+#define FIXED_POINT_SCALE 1024  // 10-bit 精度
+
+// 預先計算 Cosine 值 Look-Up Table（LUT）
 static int16_t cos_table[BLOCK_SIZE][BLOCK_SIZE];
 
 void init_dct_lut() {
@@ -12,8 +15,9 @@ void init_dct_lut() {
     }
 }
 
+// 固定小數點版 DCT
 void apply_dct_fixed(int16_t block[BLOCK_SIZE][BLOCK_SIZE]) {
-    int32_t temp[BLOCK_SIZE][BLOCK_SIZE] = {0};
+    int32_t temp[BLOCK_SIZE][BLOCK_SIZE] = {0};  // 使用 32-bit 防止溢位
 
     for (int u = 0; u < BLOCK_SIZE; u++) {
         for (int v = 0; v < BLOCK_SIZE; v++) {
@@ -26,5 +30,6 @@ void apply_dct_fixed(int16_t block[BLOCK_SIZE][BLOCK_SIZE]) {
             temp[u][v] = (sum / (FIXED_POINT_SCALE * FIXED_POINT_SCALE));  // 還原小數
         }
     }
+
     memcpy(block, temp, sizeof(temp));
 }
