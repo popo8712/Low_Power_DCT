@@ -8,11 +8,17 @@ This project implements a Discrete Cosine Transform (DCT)-based image compressio
 /dct_project/src
 
 /dct_fixed.h            # DCT 轉換
+
 /dct_fixed.c            # DCT 轉換
+
 /idct_fixed.h           # IDCT 轉換
+
 /idct_fixed.c           # IDCT 轉換
+
 /quantize_fixed.h       # 量化處理
+
 /quantize_fixed.c       # 量化處理
+
 /entropy_fixed.h        # 熵編碼
 /entropy_fixed.c        # 熵編碼
 /image_prep.h           # 影像預處理
@@ -26,4 +32,4 @@ This project implements a Discrete Cosine Transform (DCT)-based image compressio
 /dct_project/data
 /raw/                   # 原始測試影像
 /processed/             # 處理後的影像
-/dct_project/Makefile                   # 編譯設定檔
+/dct_project/Makefile   # 編譯設定檔
