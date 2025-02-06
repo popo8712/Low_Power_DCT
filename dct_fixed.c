@@ -10,7 +10,11 @@ static int16_t cos_table[BLOCK_SIZE][BLOCK_SIZE];
 void init_dct_lut() {
     for (int i = 0; i < BLOCK_SIZE; i++) {
         for (int j = 0; j < BLOCK_SIZE; j++) {
-            cos_table[i][j] = (int16_t)(cos((2 * i + 1) * j * M_PI / 16) * FIXED_POINT_SCALE);
+            // 確保不會超出 int16_t 範圍（-32768 到 32767）
+            int32_t cos_value = (int32_t)(cos((2 * i + 1) * j * M_PI / 16) * FIXED_POINT_SCALE);
+            if (cos_value > 32767) cos_value = 32767;
+            if (cos_value < -32768) cos_value = -32768;
+            cos_table[i][j] = (int16_t)cos_value;
         }
     }
 }
