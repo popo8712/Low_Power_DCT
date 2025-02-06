@@ -6,6 +6,7 @@ This project implements a Discrete Cosine Transform (DCT)-based image compressio
 
 ## Files
 /dct_project/src
+
 /dct_fixed.h            # DCT 轉換
 /dct_fixed.c            # DCT 轉換
 /idct_fixed.h           # IDCT 轉換
